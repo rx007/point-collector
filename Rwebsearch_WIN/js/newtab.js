@@ -1,0 +1,1 @@
+$(function(){apps.show();mostVisited.show();recentlyClosed.show()});

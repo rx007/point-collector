@@ -1,0 +1,117 @@
+Rakuten Point Collector
+Created 2015/10/15
+Updated 2016/12/28
+
+  What is it?
+  -----------
+
+  On Rakuten (http://www.rakuten.co.jp/) there are a variety of ways to receive
+  points on a daily basis. This program will attempt to automatically collect
+  the points from various sources of the Rakuten ecosystem (Kuji, Infoseek mail,
+  link clicking, etc).
+
+  Please note that initial setup of your Rakuten user account is required, and
+  in order to use some features some additional installations and files will be
+  required on your machine. The requirements will be outlined in the
+  "Requirements" section further down this document.
+
+  Disclaimer
+  -------------
+
+  Tang Yen (The developer) provides the software below "as is," and you use the
+  software at your own risk. The developer makes no warranties as to
+  performance, merchantability, fitness for a particular purpose, or any other
+  warranties whether expressed or implied. No oral or written communication from
+  or information provided by the developer shall create a warranty. Under no
+  circumstances shall the developer be liable for direct, indirect, special,
+  incidental, or consequential damages resulting from the use, misuse, or
+  inability to use this software, even if the developer has been advised of the
+  possibility of such damages.
+
+  Installation
+  ------------
+
+  From source, use Maven version >2.2.1 and the following command (you may also run the "install.sh" shell script):
+  mvn clean install -P local assembly:single
+
+  This will create a runnable jar in the root folder. To invoke:
+  java -jar [binary_name].jar
+
+  Documentation
+  -------------
+
+  The files to run the program with all its services are listed below:
+
+  1. point_collector.jar : the runnable jar.
+  2. log4j.xml : the logging config file. Tweak as you wish.
+  3. kujiIdList.txt : a file containing the "Kuji ID" of lotteries that are
+      "hidden" or otherwise not accessible from the main kuji page
+      (kuji.rakuten.co.jp). To find the Kuji ID of a particular kuji, simply
+      look at its URL:
+      https://kuji.rakuten.co.jp/c6d1ddac64/...
+      ↑ the Kuji ID is "c6d1ddac64"
+  4. Rwebsearch : For attaining 30 "tickets" on Rakuten Websearch. Follow the
+      instructions in "Requirements" section for setup.
+  5. log/ : a directory where logs will be recorded to. Can be configured in
+      log4j.xml
+  6. chromedriver[_LINUX|_OSX].exe : depending on OS, this binary needs to be put in the same directory as point_collector.jar.
+  	  If you do not have chromedriver, download it from https://sites.google.com/a/chromium.org/chromedriver/downloads
+      For Windows, keep the name as "chromedriver.exe"
+      For MacOSX, rename to "chromedriverOSX.exe"
+      For Linux, rename to "chromedriverLinux"
+      **NOTE: For Chromedriver to work, Chrome web browser needs to be installed as well.
+
+  Requirements
+  -------------
+
+  Rakuten has many services that you will need to "apply" for in order to start
+  using. This program uses the following services:
+
+  a. Kuji (lottery) (applying is NOT necessary)
+  b. "Points by only clicking links": please check the following link
+      http://www.rakuten-card.co.jp/service/pointclick/
+  c. "Mail de Point": register using the following link
+      https://member.pointmail.rakuten.co.jp/
+      NOTE that near the bottom of registration there is option to set whether
+      to receive mail from your personal mailbox or use the "browser inbox" that
+      is provided for you.
+      **Please choose the "browser inbox" option.**
+
+  In order to execute the services listed above, the requirements are below:
+
+  1. This software uses chromedriver as the Selenium WebDriver. Please download
+  a copy suitable for your machine at the site below:
+  https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+  2. Chrome browser must also be installed on your local machine. The directory
+  of the installation must be a place where chromedriver is able to access it.
+
+  3. Java 7 or above. Versions below 7 are not guaranteed to work.
+
+  4. [OPTIONAL] for Rakuten WebSearch feature, in order to achieve maximum
+  "points" for a single day, the Rakuten Websearch plugin for chrome must be
+  setup for Chromedriver. If it is not, then the program will loop through all
+  keywords but any searches past a certain number will not be counted (5 as of
+  2015/10/15).
+
+    For convenience, the plugin is attached with this repository. Depending on
+    whether your machine is a MacOSX or Windows, rename either Rwebsearch_[OS]
+    to just "Rwebsearch", making sure to replace existing directory. Ensure that
+    Rwebsearch is placed in the same directory as the runnable jar file.
+
+  License
+  ---------
+
+  Copyright 2015 Tang Yen
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.

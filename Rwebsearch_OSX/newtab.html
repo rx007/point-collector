@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新しいタブ</title>
+<link rel="stylesheet" type="text/css" href="css/newtab.css"/>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<div id="search" class="clearfix">
+		<div id="logo"><a href="http://websearch.rakuten.co.jp/"><img src="http://image.infoseek.rakuten.co.jp/content/toolbar/wizard/org_images/1/serp_logo.gif" /></a></div>
+		<div id="search_form">
+			<form action="http://websearch.rakuten.co.jp/Web" method="get">
+				<input id="search_query" type="text" name="qt" maxlength="2048" />
+				<input type="hidden" name="tool_id" value="1" />
+				<input type="hidden" name="ref" value="chnt" />
+				<input id="submit" type="image" src="img/btn_search.gif" value="検索" />
+			</form>
+		</div>
+	</div>
+
+
+	<div class="border"><img src="img/border.gif" width="650" height="1" /></div>
+
+	<div id="most_visited">
+		<div class="title"><img src="img/spacer.png"/>よくアクセスするページ</div>
+		<div id="mv_content"></div>
+	</div>
+
+	<div class="border"><img src="img/border.gif" width="650" height="1" /></div>
+
+	<div id="recently_closed">
+		<div class="title"><img src="img/spacer.png"/>最近閉じたタブ</div>
+		<div id="rc_content"></div>
+	</div>
+
+	<div class="border"><img src="img/border.gif" width="650" height="1" /></div>
+
+	<div id="applications">
+		<div class="title"><img src="img/spacer.png"/>アプリケーション</div>
+		<div id="app_content"></div>
+	</div>
+
+
+</div>
+
+
+<script type="text/javascript" src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/lib/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="js/apps.js"></script>
+<script type="text/javascript" src="js/mostvisited.js"></script>
+<script type="text/javascript" src="js/recentlyclosed.js"></script>
+<script type="text/javascript" src="js/newtab.js"></script>
+</body>

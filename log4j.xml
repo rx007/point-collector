@@ -1,0 +1,32 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+
+	<appender name="fileAppender" class="org.apache.log4j.FileAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="File" value="log/logfile.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %-5p %c %x : %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %-5p %c %x : %m%n" />
+		</layout>
+	</appender>
+
+	<!-- <category name="org.apache.http.client.protocol.ResponseProcessCookies"> 
+		<priority value="OFF" /> </category> <category name="edu.uci.ics.crawler4j.crawler.WebCrawler"> 
+		<priority value="OFF" /> </category> <category name="org.apache.http.impl.execchain.RetryExec"> 
+		<priority value="OFF" /> </category> -->
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="fileAppender" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+
+</log4j:configuration>

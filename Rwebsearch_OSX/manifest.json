@@ -1,0 +1,41 @@
+{
+   "background": {
+      "scripts": [ "js/lib/jquery.js", "js/recentlyclosed.js", "js/main.js", "js/background.js", "js/pushwoosh.js" ]
+   },
+   "browser_action": {
+      "default_icon": "img/icon19.png",
+      "default_popup": "popup.html",
+      "default_title": "楽天スーパーサーチ"
+   },
+   "chrome_url_overrides": {
+
+   },
+   "commands": {
+      "_execute_browser_action": {
+         "suggested_key": {
+            "default": "Alt+R",
+            "mac": "Alt+R"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "js/lib/jquery.js", "js/lib/jquery.cookie.js", "js/lib/parseuri.js", "js/script.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "検索するだけで、毎日楽天スーパーポイントが貯まります！",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgj8Qcy76UwjmUpWLmM3lWbdGr+ckGHQkHMCr2f1iBrtm+3o9aUgqUIF3YZGe4k3553h2j6D+FCPGaZV0ewnaOjHcYECptFtjFf8CRUXFheLFgxBiW11m1NpkMGeKG0gLwLzVXwlOeX1IjvLH5QXmWRRxN6u5kobjljqLPXbp25wIDAQAB",
+   "manifest_version": 2,
+   "name": "楽天スーパーサーチ",
+   "omnibox": {
+      "keyword": "R"
+   },
+   "permissions": [ "gcm", "storage", "notifications", "http://*/*", "https://*/*", "management", "tabs", "history", "chrome://favicon/", "http://*.rakuten.co.jp/", "http://*.rakuten.ne.jp/", "https://*.rakuten.co.jp/", "https://*.rakuten.ne.jp/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.129"
+}

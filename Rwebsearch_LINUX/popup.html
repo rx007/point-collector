@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/popup1477448098.css" />
+</head>
+<!-- body全体のサイズ変更 変更前:width:384px -->
+<body style="width: 320px; margin: 0">
+
+	<div id="box">
+		<!-- search box -->
+		<div id="searchFormArea">
+			<form name="searchForm" id="searchForm" method="get"
+				action="http://websearch.rakuten.co.jp/Web" target="_blank">
+				<div class="sggstInputWrap">
+					<input name="qt" id="searchBox" value="" type="text"
+						placeholder="Web検索でポイント" autofocus />
+				</div>
+				<input type="hidden" name="ref" value="chexti" /> <input
+					type="hidden" name="tool_id" value="1" />
+				<div class="submit" id="stboxform-submit">
+					<button id="websearchBtn" class="searchBtn" type="button" value="">
+						<img src="img/btn_search.png" width="32" height="32" alt="" />
+					</button>
+
+					<!-- suggest div -->
+					<div id="sggstConfig" form="searchForm" input="searchBox"
+						col="toolbar" button="websearchBtn" hookRequired="0"
+						baseUrl="https://api.suggest.search.rakuten.co.jp" suggestId="18"
+						encoding="utf-8" onoff="0" sendFormParam="1" groupId="999"
+						uaBlackList="" byteNumToHideOpenSggst="36" hideToolTips="検索候補を隠す"
+						openToolTips="検索候補を見る"></div>
+					<!-- / suggest div -->
+					<!-- suggest JS -->
+					<script language="JavaScript"
+						src="/js/suggest.js"></script>
+					<!-- /suggest JS -->
+				</div>
+				<div class="submit" id="stboxform-submit">
+					<button id="ichibaSearchBtn" class="searchBtn" type="button"
+						value="">
+						<img src="img/btn_ichiba.png" width="32" height="32" alt="" />
+					</button>
+				</div>
+			</form>
+			<form name="searchRequest" id="searchRequest" method="get" action=""
+				target=""></form>
+		</div>
+		<!-- /search box -->
+
+		<!-- kuchisu bar　-->
+		<div id="kuchisu_contents">
+		</div>
+		<!-- /kuchisu bar　-->
+
+		<!-- links for Ichiba -->
+		<div id="rakuten_contents">
+		</div>
+	</div>
+
+	<!-- /links for Ichiba -->
+
+	<div id="box2">
+		<div id="box2content">
+			<div id="iframe_pickup">
+				<iframe id="pickup_content" border="0" frameborder="0" seamless scrolling="no"></iframe>
+			</div>
+			<!-- login -->
+			<div id="login_contents">
+		    </div>
+			<!-- /login -->
+
+			<!-- iframeの導入 ※その為divタグの排除-->
+			<!-- <div id="content"></div> -->
+			<div id="iframe_part">
+				<iframe src="/img/ic_loading.gif" id="content" style="width: 320px; border: none; margin: 0; padding: 0;" border="0" frameborder="0"
+					seamless scrolling="no"></iframe>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="footer_contents"></div>
+
+	<script type="text/javascript" src="js/popup.js"></script>
+
+</body>
+
+</html>

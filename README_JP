@@ -1,0 +1,99 @@
+楽天ポイント収集
+作成 2015/10/15
+更新 2016/05/24
+
+  概要
+  -----------
+
+  楽天(http://www.rakuten.co.jp/)では多数多様サービスにポイントがもらえるため、いくつの
+  サービスが自動的にポイントを取得するプログラムである。
+
+  注意：楽天アカウントを事前にセットアップする必要あり、ローカル環境に追加ソフトが必要である。
+  詳しいは「必要条件」セクションにご覧ください。
+
+  免責事項
+  -------------
+
+  Tang Yen (The developer) provides the software below "as is," and you use the
+  software at your own risk. The developer makes no warranties as to
+  performance, merchantability, fitness for a particular purpose, or any other
+  warranties whether expressed or implied. No oral or written communication from
+  or information provided by the developer shall create a warranty. Under no
+  circumstances shall the developer be liable for direct, indirect, special,
+  incidental, or consequential damages resulting from the use, misuse, or
+  inability to use this software, even if the developer has been advised of the
+  possibility of such damages.
+
+  インストール
+  ------------
+
+  ソースから、Maven 2.2.1で以下のコマンドを実行する：
+  mvn clean install -P local assembly:single
+  注意：maven 2.2.1以外のバージョンでビルドできることを保証しない。
+
+  ↑を実行するとルートに実行可能JARファイルができあがり。実行方法：
+  java -jar point_collector.jar
+
+  ドキュメンテーション
+  -------------
+
+  プログラムを万全に動かせるため、以下の全部が必要：
+
+  1. point_collector.jar : JARファイル
+  2. log4j.xml : ログ出力設定ファイル。好きに調整できる。
+  3. kujiIdList.txt : kuji.rakuten.co.jpにないくじがあったらこのファイルにIDを追加する
+      とプレイできる。くじIDを取得する方法はただURLを見る：
+      https://kuji.rakuten.co.jp/c6d1ddac64/...
+      ↑ くじIDは「c6d1ddac64」
+  4. Rwebsearch : 30口をもらえるために必要なプラグイン。導入する方法は以下の
+      「必要条件」のセクションをご覧ください。
+  5. log/ : ログを出力するディレクトリー。log4j.xmlで調整できる。
+  6. chromedriver[OSX].exe : OS次第、このバイナリーがpoint_collector.jarと同じ
+      ディレクトリーに置く。
+      Windowsの場合は「chromedriver.exe」そのままで、
+      MacOSXの場合は「chromedriverOSX.exe」で名前を書き直してください。
+
+  Requirements
+  -------------
+
+  楽天の様々のサービスは「エントリー」する必要ある。このプログラムは以下のサービスを利用する
+
+  a. くじ (エントリー不要)
+  b. "クリックだけでポイント": 以下のリンクで申し込む。
+      http://www.rakuten-card.co.jp/service/pointclick/
+  c. "メールでポイント": 以下のリンクで申し込む。
+      https://member.pointmail.rakuten.co.jp/
+      注意：申し込みを送信する前、どこでメールを受け取る選択があり、自分のメールアドレスと
+      ブラウザーでInfoseekで管理するメールボックスである。
+      必ずブラウザーのメールボックスのオプションを選択すること。
+
+  プログラムが上記のサービスを活用できるために、以下の条件を満たすこと：
+
+  1. chromedriverというセレニウムドライバーを利用する。以下のリンクでダウンロード。
+  https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+  2. chromedriverを動けるにはChromeブラウザーも導入する必要がある。
+      必ず公共のディレクトリーにインストールしてください。
+
+  3. Java7以上。7より低いバージョンで動かすと保証しない。
+
+  4. 楽天ウエブサーチで３０口をもらえるためにプラグインが必要ある（ないと、５口ぐらいまでしか
+      もらわない）。
+
+      プラグインはこのレポに放置してある。OSによって、Rwebsearch_[OSX|WIN]を
+      「Rwebsearch」にリネームしてください。point_collector.jarと同じディレクトリーに
+      あることも確認してください。
+
+  ライセンス
+  ---------
+
+  Copyright 2015 Tang Yen
+
+  Apache License Version 2.0（「本ライセンス」）に基づいてライセンスされます。あなたがこ
+  のファイルを使用するためには、本ライセンスに従わなければなりません。本ライセンスのコピーは
+  下記の場所から入手できます。
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  適用される法律または書面での同意によって命じられない限り、本ライセンスに基づいて頒布される
+  ソフトウェアは、明示黙示を問わず、いかなる保証も条件もなしに「現状のまま」頒布されます。本
+  ライセンスでの権利と制限を規定した文言については、本ライセンスを参照してください。
