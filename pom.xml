@@ -12,7 +12,7 @@
 		<javaVersion>1.7</javaVersion>
 		<driverClass>services.Driver</driverClass>
 		<appName>point_collector</appName>
-		<seleniumVersion>2.47.1</seleniumVersion>
+		<seleniumVersion>4.12.0</seleniumVersion>
 	</properties>
 
 	<profiles>
@@ -72,7 +72,7 @@
 					<executable>java</executable>
 					<arguments>
 						<argument>-classpath</argument>
-						<classpath />
+						<classpath/>
 						<argument>${driverClass}</argument>
 					</arguments>
 				</configuration>
